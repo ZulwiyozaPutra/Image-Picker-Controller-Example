@@ -35,13 +35,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    //Picking an image action
-    @IBAction func pickAnImage(_ sender: Any) {
+    //Setup UIImagePickerController
+    
+    func setupImagePickerController(sourceType: UIImagePickerControllerSourceType) -> Void {
         let imagePickerController = UIImagePickerController()
         imagePickerController.allowsEditing = true
         imagePickerController.delegate = self
+        imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true, completion: nil)
-        
     }
+    
+    //Picking an image action from Media Library
+    @IBAction func pickAnImageFromMediaLibrary(_ sender: Any) {
+        setupImagePickerController(sourceType: .photoLibrary)
+    }
+    
+    //Picking an image action from Camera
+    @IBAction func pickAnImageFromCamera(_ sender: Any) {
+        setupImagePickerController(sourceType: .camera)
+    }
+    
 }
 

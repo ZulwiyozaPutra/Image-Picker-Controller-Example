@@ -33,10 +33,26 @@
                                     <constraint firstAttribute="height" constant="44" id="OdP-Dv-4Vg"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Pick Image" id="wsr-Dz-gfx">
-                                        <connections>
-                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="HRB-LY-NJP"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="XII-g5-UPf">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LVe-Xt-ELA" userLabel="Import">
+                                            <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Import"/>
+                                            <connections>
+                                                <action selector="pickAnImageFromMediaLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dM-ND-PQh"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yY1-2L-Whm"/>
+                                    <barButtonItem style="plain" id="D0X-yA-UW7">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OmI-7v-taK">
+                                            <rect key="frame" x="262" y="7" width="97" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Take a Picture"/>
+                                            <connections>
+                                                <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ap6-Er-RgS"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
