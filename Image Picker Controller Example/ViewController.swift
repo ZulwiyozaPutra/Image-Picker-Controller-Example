@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var imagePickedView: UIImageView!
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    //Adding IBOutlet from Storyboard
+    @IBOutlet weak var imagePickedView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topCaptionTextField: UITextField!
+    @IBOutlet weak var bottomCaptionTextField: UITextField!
     
     override func viewWillAppear(_ animated: Bool) {
+        
         //Tells the controller to disabled camera button if source for camera is not available
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
@@ -22,6 +25,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    //Tells delegate to clear text field when editing di begin
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.topCaptionTextField.text = ""
+    }
+    
+    //Tells delegate to dismiss keyboard when return is tapped
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
     
     //Tells the delegate that the user picked a still image or movie.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
