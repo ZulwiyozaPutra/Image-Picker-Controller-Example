@@ -12,9 +12,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imagePickedView: UIImageView!
     
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Tells the controller to disabled camera button if source for camera is not available
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     //Tells the delegate that the user picked a still image or movie.
