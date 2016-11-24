@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Picker_Controller_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-QL-cYE">
+                                <rect key="frame" x="0.0" y="52" width="375" height="562.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="562.5" id="LAX-io-4Vo"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKD-kg-4XW">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OdP-Dv-4Vg"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Pick Image" id="wsr-Dz-gfx">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="HRB-LY-NJP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wKD-kg-4XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E1e-R7-8G6"/>
+                            <constraint firstItem="cGI-QL-cYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JRW-Nj-N9g"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wKD-kg-4XW" secondAttribute="bottom" id="Ly8-YZ-uC8"/>
+                            <constraint firstAttribute="trailing" secondItem="cGI-QL-cYE" secondAttribute="trailing" id="Phg-t4-Mc5"/>
+                            <constraint firstAttribute="trailing" secondItem="wKD-kg-4XW" secondAttribute="trailing" id="US3-xm-CP8"/>
+                            <constraint firstItem="cGI-QL-cYE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rBg-Gw-dRQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagePickedView" destination="cGI-QL-cYE" id="l3d-kV-vVw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
